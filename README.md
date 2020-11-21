@@ -1,1 +1,4 @@
 # pgoutput
+
+```go
+package ma
