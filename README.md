@@ -1,4 +1,7 @@
 # pgoutput
 
 ```go
-package ma
+package main
+
+import (
+	"conte
