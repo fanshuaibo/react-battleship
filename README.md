@@ -13,4 +13,5 @@ import (
 	"github.com/kyleconroy/pgoutput"
 )
 
-func main() 
+func main() {
+	ctx := c
