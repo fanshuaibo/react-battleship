@@ -13,4 +13,4 @@ import (
 	"github.com/kyleconroy/pgoutput"
 )
 
-func
+func main() 
