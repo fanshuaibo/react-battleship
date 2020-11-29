@@ -10,4 +10,4 @@ import (
 	"time"
 
 	"github.com/jackc/pgx"
-	"github.com/kyleco
+	"github.com/kyleconroy/pgoutput"
