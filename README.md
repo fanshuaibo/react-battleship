@@ -15,4 +15,4 @@ import (
 
 func main() {
 	ctx := context.Background()
-	config
+	config := pgx.ConnCon
