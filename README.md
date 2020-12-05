@@ -15,4 +15,4 @@ import (
 
 func main() {
 	ctx := context.Background()
-	config := pgx.ConnConfig{Database: "op
+	config := pgx.ConnConfig{Database: "opsdash", Us
