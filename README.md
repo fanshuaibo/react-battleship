@@ -15,4 +15,5 @@ import (
 
 func main() {
 	ctx := context.Background()
-	config := pgx.ConnConfig{Database: "opsdash", User: "replican
+	config := pgx.ConnConfig{Database: "opsdash", User: "replicant"}
+	co
