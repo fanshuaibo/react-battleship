@@ -16,4 +16,4 @@ import (
 func main() {
 	ctx := context.Background()
 	config := pgx.ConnConfig{Database: "opsdash", User: "replicant"}
-	conn, err := pgx.ReplicationConn
+	conn, err := pgx.ReplicationConnect(confi
