@@ -19,3 +19,6 @@ func main() {
 	conn, err := pgx.ReplicationConnect(config)
 	if err != nil {
 		log.Fatal(err)
+	}
+
+  /
