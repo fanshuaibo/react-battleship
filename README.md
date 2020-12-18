@@ -21,4 +21,4 @@ func main() {
 		log.Fatal(err)
 	}
 
-  // Create a s
+  // Create a slot if it doesn
