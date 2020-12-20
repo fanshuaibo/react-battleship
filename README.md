@@ -22,4 +22,4 @@ func main() {
 	}
 
   // Create a slot if it doesn't already exist
-	// if err := conn.CreateReplicationSlot("sub2", "p
+	// if err := conn.CreateReplicationSlot("sub2", "pgoutput
