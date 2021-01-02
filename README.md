@@ -26,4 +26,4 @@ func main() {
 	// 	log.Fatalf("Failed to create replication slot: %v", err)
 	// }
 
-	set := pgoutput.NewRe
+	set := pgoutput.NewRelationSet(
