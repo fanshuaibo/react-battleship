@@ -24,4 +24,6 @@ func main() {
   // Create a slot if it doesn't already exist
 	// if err := conn.CreateReplicationSlot("sub2", "pgoutput"); err != nil {
 	// 	log.Fatalf("Failed to create replication slot: %v", err)
-	
+	// }
+
+	se
