@@ -28,4 +28,4 @@ func main() {
 
 	set := pgoutput.NewRelationSet()
 
-	dump :
+	dump := func(relati
