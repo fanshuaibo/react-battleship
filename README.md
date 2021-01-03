@@ -28,4 +28,4 @@ func main() {
 
 	set := pgoutput.NewRelationSet()
 
-	dump := func(relation uint32, row []pgout
+	dump := func(relation uint32, row []pgoutput.Tuple) 
