@@ -33,4 +33,5 @@ func main() {
 		if err != nil {
 			return fmt.Errorf("error parsing values: %s", err)
 		}
-		for name, value := range val
+		for name, value := range values {
+			val :
