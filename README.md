@@ -35,4 +35,4 @@ func main() {
 		}
 		for name, value := range values {
 			val := value.Get()
-			log
+			log.Printf("%s (%T): %#v", name
