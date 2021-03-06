@@ -37,4 +37,7 @@ func main() {
 			val := value.Get()
 			log.Printf("%s (%T): %#v", name, val, val)
 		}
-		return n
+		return nil
+	}
+
+	
