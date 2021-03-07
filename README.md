@@ -40,4 +40,4 @@ func main() {
 		return nil
 	}
 
-	handler := func(m p
+	handler := func(m pgoutput.Messa
