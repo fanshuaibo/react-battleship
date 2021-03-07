@@ -40,4 +40,4 @@ func main() {
 		return nil
 	}
 
-	
+	handler := f
