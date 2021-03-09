@@ -40,4 +40,5 @@ func main() {
 		return nil
 	}
 
-	handler := func(m pgoutput.Messa
+	handler := func(m pgoutput.Message) error {
+		sw
