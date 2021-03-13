@@ -42,4 +42,4 @@ func main() {
 
 	handler := func(m pgoutput.Message) error {
 		switch v := m.(type) {
-		case
+		case pgoutput.Rel
