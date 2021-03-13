@@ -41,4 +41,4 @@ func main() {
 	}
 
 	handler := func(m pgoutput.Message) error {
-		sw
+		switch v := m.
