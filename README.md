@@ -43,3 +43,4 @@ func main() {
 	handler := func(m pgoutput.Message) error {
 		switch v := m.(type) {
 		case pgoutput.Relation:
+			log.Printf
