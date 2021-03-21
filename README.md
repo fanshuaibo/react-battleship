@@ -44,4 +44,4 @@ func main() {
 		switch v := m.(type) {
 		case pgoutput.Relation:
 			log.Printf("RELATION")
-	
+			set.Ad
