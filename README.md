@@ -45,4 +45,4 @@ func main() {
 		case pgoutput.Relation:
 			log.Printf("RELATION")
 			set.Add(v)
-		case p
+		case pgoutput.In
