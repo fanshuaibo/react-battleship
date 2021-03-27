@@ -47,4 +47,4 @@ func main() {
 			set.Add(v)
 		case pgoutput.Insert:
 			log.Printf("INSERT")
-			re
+			return dump
