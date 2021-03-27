@@ -46,4 +46,5 @@ func main() {
 			log.Printf("RELATION")
 			set.Add(v)
 		case pgoutput.Insert:
-			log.Printf("INSERT"
+			log.Printf("INSERT")
+			re
