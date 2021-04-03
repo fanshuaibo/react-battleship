@@ -49,4 +49,5 @@ func main() {
 			log.Printf("INSERT")
 			return dump(v.RelationID, v.Row)
 		case pgoutput.Update:
-			log.Printf("UPD
+			log.Printf("UPDATE")
+			r
