@@ -51,4 +51,4 @@ func main() {
 		case pgoutput.Update:
 			log.Printf("UPDATE")
 			return dump(v.RelationID, v.Row)
-		cas
+		case pgoutput.De
