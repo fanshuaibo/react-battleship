@@ -50,4 +50,4 @@ func main() {
 			return dump(v.RelationID, v.Row)
 		case pgoutput.Update:
 			log.Printf("UPDATE")
-			return dump(v.
+			return dump(v.RelationID, v
