@@ -52,4 +52,5 @@ func main() {
 			log.Printf("UPDATE")
 			return dump(v.RelationID, v.Row)
 		case pgoutput.Delete:
-			log.Printf("DELETE"
+			log.Printf("DELETE")
+			re
