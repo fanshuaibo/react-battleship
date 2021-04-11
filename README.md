@@ -55,4 +55,4 @@ func main() {
 			log.Printf("DELETE")
 			return dump(v.RelationID, v.Row)
 		}
-	
+		return n
