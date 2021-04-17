@@ -58,4 +58,4 @@ func main() {
 		return nil
 	}
 
-	replication
+	replication := pgoutpu
