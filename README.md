@@ -58,4 +58,5 @@ func main() {
 		return nil
 	}
 
-	replication := pgoutput.LogicalReplica
+	replication := pgoutput.LogicalReplication{
+		
