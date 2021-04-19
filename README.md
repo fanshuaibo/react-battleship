@@ -59,4 +59,4 @@ func main() {
 	}
 
 	replication := pgoutput.LogicalReplication{
-		
+		Subscription: 
