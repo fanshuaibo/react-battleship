@@ -60,4 +60,5 @@ func main() {
 
 	replication := pgoutput.LogicalReplication{
 		Subscription:  "sub2",
-		Publicat
+		Publication:   "pub2",
+	
