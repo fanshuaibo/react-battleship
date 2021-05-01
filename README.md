@@ -61,4 +61,4 @@ func main() {
 	replication := pgoutput.LogicalReplication{
 		Subscription:  "sub2",
 		Publication:   "pub2",
-	
+		WaitTimeo
