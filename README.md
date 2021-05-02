@@ -62,4 +62,5 @@ func main() {
 		Subscription:  "sub2",
 		Publication:   "pub2",
 		WaitTimeout:   time.Second * 10,
-		StatusTimeout: time.Second 
+		StatusTimeout: time.Second * 10,
+		Handl
