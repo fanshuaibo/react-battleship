@@ -63,4 +63,4 @@ func main() {
 		Publication:   "pub2",
 		WaitTimeout:   time.Second * 10,
 		StatusTimeout: time.Second * 10,
-		Handl
+		Handler:       h
