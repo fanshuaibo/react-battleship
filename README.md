@@ -66,4 +66,4 @@ func main() {
 		Handler:       handler,
 	}
 
-	if err 
+	if err := replica
