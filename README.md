@@ -65,3 +65,5 @@ func main() {
 		StatusTimeout: time.Second * 10,
 		Handler:       handler,
 	}
+
+	if err 
