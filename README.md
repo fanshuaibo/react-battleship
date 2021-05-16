@@ -66,4 +66,4 @@ func main() {
 		Handler:       handler,
 	}
 
-	if err := replica
+	if err := replication.Start(ctx,
