@@ -66,4 +66,4 @@ func main() {
 		Handler:       handler,
 	}
 
-	if err := replication.Start(ctx, conn)
+	if err := replication.Start(ctx, conn); err != nil {
