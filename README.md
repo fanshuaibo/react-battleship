@@ -67,3 +67,4 @@ func main() {
 	}
 
 	if err := replication.Start(ctx, conn); err != nil {
+		log.Fatal(e
