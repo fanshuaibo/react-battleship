@@ -6,4 +6,4 @@ import (
 	"log"
 
 	"github.com/jackc/pgx"
-	"github.com/kyleconr
+	"github.com/kyleconroy/pgoutput
