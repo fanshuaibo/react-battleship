@@ -9,4 +9,5 @@ import (
 	"github.com/kyleconroy/pgoutput"
 )
 
-func ma
+func main() {
+	ctx := 
