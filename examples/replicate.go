@@ -6,4 +6,7 @@ import (
 	"log"
 
 	"github.com/jackc/pgx"
-	"github.com/kyleconroy/pgoutput
+	"github.com/kyleconroy/pgoutput"
+)
+
+func ma
