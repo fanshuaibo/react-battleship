@@ -14,4 +14,7 @@ func main() {
 	config := pgx.ConnConfig{Database: "opsdash", User: "replicant"}
 	conn, err := pgx.ReplicationConnect(config)
 	if err != nil {
-		log.Fat
+		log.Fatal(err)
+	}
+
+	
