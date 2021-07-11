@@ -19,4 +19,4 @@ func main() {
 
 	set := pgoutput.NewRelationSet(nil)
 
-	dump := func
+	dump := func(relation uin
