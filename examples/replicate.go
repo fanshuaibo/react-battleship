@@ -17,4 +17,6 @@ func main() {
 		log.Fatal(err)
 	}
 
-	set := pgoutput.NewRelation
+	set := pgoutput.NewRelationSet(nil)
+
+	dum
