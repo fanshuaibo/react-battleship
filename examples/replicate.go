@@ -20,3 +20,4 @@ func main() {
 	set := pgoutput.NewRelationSet(nil)
 
 	dump := func(relation uint32, row []pgoutput.Tuple) error {
+		values, 
