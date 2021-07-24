@@ -22,4 +22,4 @@ func main() {
 	dump := func(relation uint32, row []pgoutput.Tuple) error {
 		values, err := set.Values(relation, row)
 		if err != nil {
-			ret
+			return fmt.Errorf
