@@ -24,4 +24,4 @@ func main() {
 		if err != nil {
 			return fmt.Errorf("error parsing values: %s", err)
 		}
-	
+		for name, valu
