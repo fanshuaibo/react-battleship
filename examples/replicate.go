@@ -25,4 +25,5 @@ func main() {
 			return fmt.Errorf("error parsing values: %s", err)
 		}
 		for name, value := range values {
-			val := valu
+			val := value.Get()
+		
