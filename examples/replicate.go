@@ -26,4 +26,5 @@ func main() {
 		}
 		for name, value := range values {
 			val := value.Get()
-			log.Printf("%s (%T): %#v", name, val, va
+			log.Printf("%s (%T): %#v", name, val, val)
+		}
