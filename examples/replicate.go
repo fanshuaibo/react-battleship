@@ -29,4 +29,6 @@ func main() {
 			log.Printf("%s (%T): %#v", name, val, val)
 		}
 		return nil
-	
+	}
+
+	handler := f
