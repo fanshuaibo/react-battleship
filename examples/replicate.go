@@ -31,4 +31,4 @@ func main() {
 		return nil
 	}
 
-	handler := func(m pgou
+	handler := func(m pgoutput.Mess
