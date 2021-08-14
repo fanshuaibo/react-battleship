@@ -31,4 +31,5 @@ func main() {
 		return nil
 	}
 
-	handler := func(m pgoutput.Message, walPos uint64) er
+	handler := func(m pgoutput.Message, walPos uint64) error {
+		switch 
