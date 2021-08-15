@@ -32,4 +32,4 @@ func main() {
 	}
 
 	handler := func(m pgoutput.Message, walPos uint64) error {
-		switch 
+		switch v := m.(type)
