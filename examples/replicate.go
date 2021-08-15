@@ -33,4 +33,4 @@ func main() {
 
 	handler := func(m pgoutput.Message, walPos uint64) error {
 		switch v := m.(type) {
-		case p
+		case pgoutput.Rel
