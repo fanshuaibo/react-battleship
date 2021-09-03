@@ -40,4 +40,4 @@ func main() {
 			log.Printf("INSERT")
 			return dump(v.RelationID, v.Row)
 		case pgoutput.Update:
-			log
+			log.Print
