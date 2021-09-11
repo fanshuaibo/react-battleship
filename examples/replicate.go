@@ -44,4 +44,6 @@ func main() {
 			return dump(v.RelationID, v.Row)
 		case pgoutput.Delete:
 			log.Printf("DELETE")
-			return dump(v.RelationID, 
+			return dump(v.RelationID, v.Row)
+		}
+		r
