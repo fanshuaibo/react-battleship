@@ -49,4 +49,4 @@ func main() {
 		return nil
 	}
 
-	sub := pgo
+	sub := pgoutput.NewSubscrip
