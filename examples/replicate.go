@@ -49,4 +49,4 @@ func main() {
 		return nil
 	}
 
-	sub := pgoutput.NewSubscription(conn, "sub1", 
+	sub := pgoutput.NewSubscription(conn, "sub1", "pub1",
