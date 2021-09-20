@@ -1,1 +1,1 @@
-module github.com/kyl
+module github.com/kyleconroy/pgoutput
