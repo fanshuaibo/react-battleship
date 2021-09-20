@@ -1,1 +1,1 @@
-module githu
+module github.com/kyl
