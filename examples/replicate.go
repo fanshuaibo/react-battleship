@@ -53,3 +53,4 @@ func main() {
 	if err := sub.Start(ctx, 0, handler); err != nil {
 		log.Fatal(err)
 	}
+}
