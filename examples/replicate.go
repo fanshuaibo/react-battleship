@@ -50,4 +50,5 @@ func main() {
 	}
 
 	sub := pgoutput.NewSubscription(conn, "sub1", "pub1", 0, false)
-	if err := sub.Start(ctx, 0, handler); err != nil
+	if err := sub.Start(ctx, 0, handler); err != nil {
+		log.F
