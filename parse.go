@@ -22,3 +22,15 @@ func (d *decoder) bool() bool {
 }
 
 func (d *decoder) uint8() uint8 {
+	x := d.buf.Next(1)[0]
+	return x
+
+}
+
+func (d *decoder) uint16() uint16 {
+	x := d.order.Uint16(d.buf.Next(2))
+	return x
+}
+
+func (d *decoder) string() string {
+	s, err := d.buf.ReadBytes(0)
