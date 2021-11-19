@@ -34,3 +34,12 @@ func (d *decoder) uint16() uint16 {
 
 func (d *decoder) string() string {
 	s, err := d.buf.ReadBytes(0)
+	if err != nil {
+		// TODO: Return an error
+		panic(err)
+	}
+	return string(s[:len(s)-1])
+}
+
+func (d *decoder) uint32() uint32 {
+	x := d.order.Uint32(d.buf.Next(4))
