@@ -43,3 +43,6 @@ func (d *decoder) string() string {
 
 func (d *decoder) uint32() uint32 {
 	x := d.order.Uint32(d.buf.Next(4))
+	return x
+
+}
