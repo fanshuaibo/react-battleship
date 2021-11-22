@@ -86,3 +86,13 @@ func (d *decoder) tupledata() []Tuple {
 	}
 	return data
 }
+
+func (d *decoder) columns() []Column {
+	size := int(d.uint16())
+	data := make([]Column, size)
+	for i := 0; i < size; i++ {
+		data[i] = Column{
+			Key:  d.bool(),
+			Name: d.string(),
+			Type: d.uint32(),
+			Mode: d.uint32(),
