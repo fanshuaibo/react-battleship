@@ -110,3 +110,20 @@ type Begin struct {
 	// 	Xid of the transaction.
 	XID int32
 }
+
+type Commit struct {
+	Flags uint8
+	// The final LSN of the transaction.
+	LSN uint64
+	// The final LSN of the transaction.
+	TransactionLSN uint64
+	Timestamp      time.Time
+}
+
+type Relation struct {
+	// ID of the relation.
+	ID uint32
+	// Namespace (empty string for pg_catalog).
+	Namespace string
+	Name      string
+	Replica   uint8
