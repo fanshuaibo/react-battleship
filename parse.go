@@ -144,3 +144,13 @@ type Type struct {
 type Insert struct {
 	/// ID of the relation corresponding to the ID in the relation message.
 	RelationID uint32
+	// Identifies the following TupleData message as a new tuple.
+	New bool
+	Row []Tuple
+}
+
+type Update struct {
+	/// ID of the relation corresponding to the ID in the relation message.
+	RelationID uint32
+	// Identifies the following TupleData message as a new tuple.
+	Old    bool
