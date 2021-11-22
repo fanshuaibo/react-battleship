@@ -68,3 +68,21 @@ func (d *decoder) rowinfo(char byte) bool {
 		return true
 	} else {
 		d.buf.UnreadByte()
+		return false
+	}
+}
+
+func (d *decoder) tupledata() []Tuple {
+	size := int(d.uint16())
+	data := make([]Tuple, size)
+	for i := 0; i < size; i++ {
+		switch d.buf.Next(1)[0] {
+		case 'n':
+		case 'u':
+		case 't':
+			vsize := int(d.order.Uint32(d.buf.Next(4)))
+			data[i] = Tuple{Flag: 't', Value: d.buf.Next(vsize)}
+		}
+	}
+	return data
+}
