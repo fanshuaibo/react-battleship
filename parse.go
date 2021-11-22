@@ -96,3 +96,17 @@ func (d *decoder) columns() []Column {
 			Name: d.string(),
 			Type: d.uint32(),
 			Mode: d.uint32(),
+		}
+	}
+	return data
+}
+
+type Begin struct {
+	// The final LSN of the transaction.
+	LSN uint64
+	// Commit timestamp of the transaction. The value is in number of
+	// microseconds since PostgreSQL epoch (2000-01-01).
+	Timestamp time.Time
+	// 	Xid of the transaction.
+	XID int32
+}
