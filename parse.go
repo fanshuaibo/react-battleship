@@ -154,3 +154,14 @@ type Update struct {
 	RelationID uint32
 	// Identifies the following TupleData message as a new tuple.
 	Old    bool
+	Key    bool
+	New    bool
+	OldRow []Tuple
+	Row    []Tuple
+}
+
+type Delete struct {
+	/// ID of the relation corresponding to the ID in the relation message.
+	RelationID uint32
+	// Identifies the following TupleData message as a new tuple.
+	Key bool // TODO
