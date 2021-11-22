@@ -127,3 +127,8 @@ type Relation struct {
 	Namespace string
 	Name      string
 	Replica   uint8
+	Columns   []Column
+}
+
+func (r Relation) IsEmpty() bool {
+	return r.ID == 0 && r.Name == "" && r.Replica == 0 && len(r.Columns) == 0
