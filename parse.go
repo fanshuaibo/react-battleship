@@ -132,3 +132,15 @@ type Relation struct {
 
 func (r Relation) IsEmpty() bool {
 	return r.ID == 0 && r.Name == "" && r.Replica == 0 && len(r.Columns) == 0
+}
+
+type Type struct {
+	// ID of the data type
+	ID        uint32
+	Namespace string
+	Name      string
+}
+
+type Insert struct {
+	/// ID of the relation corresponding to the ID in the relation message.
+	RelationID uint32
