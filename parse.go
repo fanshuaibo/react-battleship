@@ -165,3 +165,16 @@ type Delete struct {
 	RelationID uint32
 	// Identifies the following TupleData message as a new tuple.
 	Key bool // TODO
+	Old bool // TODO
+	Row []Tuple
+}
+
+type Origin struct {
+	LSN  uint64
+	Name string
+}
+
+type DecoderValue interface {
+	pgtype.TextDecoder
+	pgtype.Value
+}
