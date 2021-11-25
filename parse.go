@@ -189,3 +189,14 @@ type Tuple struct {
 	Flag  int8
 	Value []byte
 }
+
+type Message interface {
+	msg()
+}
+
+func (Begin) msg()    {}
+func (Relation) msg() {}
+func (Update) msg()   {}
+func (Insert) msg()   {}
+func (Delete) msg()   {}
+func (Commit) msg()   {}
