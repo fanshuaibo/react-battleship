@@ -200,3 +200,12 @@ func (Update) msg()   {}
 func (Insert) msg()   {}
 func (Delete) msg()   {}
 func (Commit) msg()   {}
+func (Origin) msg()   {}
+func (Type) msg()     {}
+
+// Parse a logical replication message.
+// See https://www.postgresql.org/docs/current/static/protocol-logicalrep-message-formats.html
+func Parse(src []byte) (Message, error) {
+	msgType := src[0]
+	d := &decoder{order: binary.BigEndian, buf: bytes.NewBuffer(src[1:])}
+	switch msgType {
