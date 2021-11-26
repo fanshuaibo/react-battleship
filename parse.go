@@ -209,3 +209,15 @@ func Parse(src []byte) (Message, error) {
 	msgType := src[0]
 	d := &decoder{order: binary.BigEndian, buf: bytes.NewBuffer(src[1:])}
 	switch msgType {
+	case 'B':
+		b := Begin{}
+		b.LSN = d.uint64()
+		b.Timestamp = d.timestamp()
+		b.XID = d.int32()
+		return b, nil
+	case 'C':
+		c := Commit{}
+		c.Flags = d.uint8()
+		c.LSN = d.uint64()
+		c.TransactionLSN = d.uint64()
+		c.Timestamp = d.timestamp()
