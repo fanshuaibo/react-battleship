@@ -221,3 +221,16 @@ func Parse(src []byte) (Message, error) {
 		c.LSN = d.uint64()
 		c.TransactionLSN = d.uint64()
 		c.Timestamp = d.timestamp()
+		return c, nil
+	case 'O':
+		o := Origin{}
+		o.LSN = d.uint64()
+		o.Name = d.string()
+		return o, nil
+	case 'R':
+		r := Relation{}
+		r.ID = d.uint32()
+		r.Namespace = d.string()
+		r.Name = d.string()
+		r.Replica = d.uint8()
+		r.Columns = d.columns()
