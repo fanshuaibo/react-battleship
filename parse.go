@@ -245,3 +245,10 @@ func Parse(src []byte) (Message, error) {
 		i := Insert{}
 		i.RelationID = d.uint32()
 		i.New = d.uint8() > 0
+		i.Row = d.tupledata()
+		return i, nil
+	case 'U':
+		u := Update{}
+		u.RelationID = d.uint32()
+		u.Key = d.rowinfo('K')
+		u.Old = d.rowinfo('O')
