@@ -234,3 +234,14 @@ func Parse(src []byte) (Message, error) {
 		r.Name = d.string()
 		r.Replica = d.uint8()
 		r.Columns = d.columns()
+		return r, nil
+	case 'Y':
+		t := Type{}
+		t.ID = d.uint32()
+		t.Namespace = d.string()
+		t.Name = d.string()
+		return t, nil
+	case 'I':
+		i := Insert{}
+		i.RelationID = d.uint32()
+		i.New = d.uint8() > 0
