@@ -252,3 +252,8 @@ func Parse(src []byte) (Message, error) {
 		u.RelationID = d.uint32()
 		u.Key = d.rowinfo('K')
 		u.Old = d.rowinfo('O')
+		if u.Key || u.Old {
+			u.OldRow = d.tupledata()
+		}
+		u.New = d.uint8() > 0
+		u.Row = d.tupledata()
