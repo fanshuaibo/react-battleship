@@ -257,3 +257,13 @@ func Parse(src []byte) (Message, error) {
 		}
 		u.New = d.uint8() > 0
 		u.Row = d.tupledata()
+		return u, nil
+	case 'D':
+		dl := Delete{}
+		dl.RelationID = d.uint32()
+		dl.Key = d.rowinfo('K')
+		dl.Old = d.rowinfo('O')
+		dl.Row = d.tupledata()
+		return dl, nil
+	default:
+		return nil, fmt.Errorf("Unknown message type for %s (%d)", []byte{msgType}, msgType)
