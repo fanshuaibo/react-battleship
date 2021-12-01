@@ -267,3 +267,5 @@ func Parse(src []byte) (Message, error) {
 		return dl, nil
 	default:
 		return nil, fmt.Errorf("Unknown message type for %s (%d)", []byte{msgType}, msgType)
+	}
+}
