@@ -38,3 +38,16 @@ func GenerateLogicalReplicationFiles(t *testing.T) {
 		message, err = conn.WaitForReplicationMessage(ctx)
 		if err != nil {
 			log.Fatalf("Replication failed: %v %s", message, err)
+		}
+
+		if message.WalMessage != nil {
+			ioutil.WriteFile(fmt.Sprintf("%03d.waldata", count), message.WalMessage.WalData, 0644)
+			count += 1
+		}
+		if message.ServerHeartbeat != nil {
+			log.Printf("Got heartbeat: %s", message.ServerHeartbeat)
+		}
+	}
+}
+
+func TestParseWalData(t *testing.T) {
