@@ -51,3 +51,16 @@ func GenerateLogicalReplicationFiles(t *testing.T) {
 }
 
 func TestParseWalData(t *testing.T) {
+	files, _ := filepath.Glob("testdata/*")
+	set := NewRelationSet(nil)
+
+	expected := map[int]struct {
+		ID  int32
+		Val string
+	}{
+		2:  {40, "forty"},
+		11: {11, "eleven"},
+		14: {12, "twelve"},
+	}
+
+	for i, file := range files {
