@@ -28,3 +28,13 @@ func GenerateLogicalReplicationFiles(t *testing.T) {
 	if err != nil {
 		log.Fatalf("Failed to start replication: %v", err)
 	}
+
+	ctx := context.Background()
+	count := 0
+
+	for {
+		var message *pgx.ReplicationMessage
+
+		message, err = conn.WaitForReplicationMessage(ctx)
+		if err != nil {
+			log.Fatalf("Replication failed: %v %s", message, err)
