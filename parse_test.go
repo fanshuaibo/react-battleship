@@ -64,3 +64,13 @@ func TestParseWalData(t *testing.T) {
 	}
 
 	for i, file := range files {
+		waldata, _ := ioutil.ReadFile(file)
+		m, err := Parse(waldata)
+		if err != nil {
+			t.Errorf("error parsing %s: %s", file, err)
+			continue
+		}
+
+		switch v := m.(type) {
+		case Relation:
+			set.Add(v)
