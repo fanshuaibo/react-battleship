@@ -74,3 +74,21 @@ func TestParseWalData(t *testing.T) {
 		switch v := m.(type) {
 		case Relation:
 			set.Add(v)
+		case Insert:
+			t.Run(fmt.Sprintf("waldata/%d", i), func(t *testing.T) {
+				values, err := set.Values(v.RelationID, v.Row)
+				if err != nil {
+					t.Error(err)
+				}
+
+				exp := expected[i]
+				if diff := cmp.Diff(exp.ID, values["id"].Get()); diff != "" {
+					t.Errorf("id: %s", diff)
+				}
+				if diff := cmp.Diff(exp.Val, values["val"].Get()); diff != "" {
+					t.Errorf("val: %s", diff)
+				}
+			})
+		case Type:
+			if v.ID != 35756 {
+				t.Errorf("Type OID: %d", v.ID)
