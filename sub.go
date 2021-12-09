@@ -46,3 +46,12 @@ func NewSubscription(conn *pgx.ReplicationConn, name, publication string, walRet
 func pluginArgs(version, publication string) string {
 	return fmt.Sprintf(`"proto_version" '%s', "publication_names" '%s'`, version, publication)
 }
+
+// CreateSlot creates a replication slot if it doesn't exist
+func (s *Subscription) CreateSlot() (err error) {
+	// If creating the replication slot fails with code 42710, this means
+	// the replication slot already exists.
+	if err = s.conn.CreateReplicationSlot(s.Name, "pgoutput"); err != nil {
+		pgerr, ok := err.(pgx.PgError)
+		if !ok || pgerr.Code != "42710" {
+			return
