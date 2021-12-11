@@ -55,3 +55,12 @@ func (s *Subscription) CreateSlot() (err error) {
 		pgerr, ok := err.(pgx.PgError)
 		if !ok || pgerr.Code != "42710" {
 			return
+		}
+
+		err = nil
+	}
+
+	return
+}
+
+func (s *Subscription) sendStatus(walWrite, walFlush uint64) error {
