@@ -77,3 +77,15 @@ func (s *Subscription) sendStatus(walWrite, walFlush uint64) error {
 	}
 
 	if err = s.conn.SendStandbyStatus(k); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// Flush sends the status message to server indicating that we've fully applied all of the events until maxWal.
+// This allows PostgreSQL to purge it's WAL logs
+func (s *Subscription) Flush() error {
+	wp := atomic.LoadUint64(&s.maxWal)
+	err := s.sendStatus(wp, wp)
+	if err == nil {
