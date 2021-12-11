@@ -64,3 +64,16 @@ func (s *Subscription) CreateSlot() (err error) {
 }
 
 func (s *Subscription) sendStatus(walWrite, walFlush uint64) error {
+	if walFlush > walWrite {
+		return fmt.Errorf("walWrite should be >= walFlush")
+	}
+
+	s.Lock()
+	defer s.Unlock()
+
+	k, err := pgx.NewStandbyStatus(walFlush, walFlush, walWrite)
+	if err != nil {
+		return fmt.Errorf("error creating status: %s", err)
+	}
+
+	if err = s.conn.SendStandbyStatus(k); err != nil {
