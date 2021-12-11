@@ -89,3 +89,14 @@ func (s *Subscription) Flush() error {
 	wp := atomic.LoadUint64(&s.maxWal)
 	err := s.sendStatus(wp, wp)
 	if err == nil {
+		atomic.StoreUint64(&s.walFlushed, wp)
+	}
+
+	return err
+}
+
+// Start replication and block until error or ctx is canceled
+func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (err error) {
+	err = s.conn.StartReplication(s.Name, startLSN, -1, pluginArgs("1", s.Publication))
+	if err != nil {
+		return fmt.Errorf("failed to start replication: %s", err)
