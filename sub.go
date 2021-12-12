@@ -110,3 +110,18 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 
 		// Confirm only walRetain bytes in past
 		// If walRetain is zero - will confirm current walPos as flushed
+		walFlush := walPos - s.walRetain
+
+		if walLastFlushed > walFlush {
+			// If there was a manual flush - report it's position until we're past it
+			walFlush = walLastFlushed
+		} else if walFlush < 0 {
+			// If we have less than walRetain bytes - just report zero
+			walFlush = 0
+		}
+
+		return s.sendStatus(walPos, walFlush)
+	}
+
+	go func() {
+		tick := time.NewTicker(s.StatusTimeout)
