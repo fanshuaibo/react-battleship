@@ -100,3 +100,13 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 	err = s.conn.StartReplication(s.Name, startLSN, -1, pluginArgs("1", s.Publication))
 	if err != nil {
 		return fmt.Errorf("failed to start replication: %s", err)
+	}
+
+	s.maxWal = startLSN
+
+	sendStatus := func() error {
+		walPos := atomic.LoadUint64(&s.maxWal)
+		walLastFlushed := atomic.LoadUint64(&s.walFlushed)
+
+		// Confirm only walRetain bytes in past
+		// If walRetain is zero - will confirm current walPos as flushed
