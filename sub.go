@@ -125,3 +125,15 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 
 	go func() {
 		tick := time.NewTicker(s.StatusTimeout)
+		defer tick.Stop()
+
+		for {
+			select {
+			case <-tick.C:
+				if err = sendStatus(); err != nil {
+					return
+				}
+
+			case <-ctx.Done():
+				return
+			}
