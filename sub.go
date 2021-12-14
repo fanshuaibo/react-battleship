@@ -151,3 +151,21 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 			return
 
 		default:
+			var message *pgx.ReplicationMessage
+			wctx, cancel := context.WithTimeout(ctx, s.WaitTimeout)
+			s.Lock()
+			message, err = s.conn.WaitForReplicationMessage(wctx)
+			s.Unlock()
+			cancel()
+
+			if err == context.DeadlineExceeded {
+				continue
+			} else if err == context.Canceled {
+				return
+			} else if err != nil {
+				return fmt.Errorf("replication failed: %s", err)
+			}
+
+			if message == nil {
+				return fmt.Errorf("replication failed: nil message received, should not happen")
+			}
