@@ -137,3 +137,17 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 			case <-ctx.Done():
 				return
 			}
+		}
+	}()
+
+	for {
+		select {
+		case <-ctx.Done():
+			// Send final status and exit
+			if err = sendStatus(); err != nil {
+				return fmt.Errorf("Unable to send final status: %s", err)
+			}
+
+			return
+
+		default:
