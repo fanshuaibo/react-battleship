@@ -182,3 +182,16 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 				if walStart > atomic.LoadUint64(&s.maxWal) {
 					atomic.StoreUint64(&s.maxWal, walStart)
 				}
+
+				logmsg, err = Parse(message.WalMessage.WalData)
+				if err != nil {
+					return fmt.Errorf("invalid pgoutput message: %s", err)
+				}
+
+				// Ignore the error from handler for now
+				if err = h(logmsg, walStart); err != nil && s.failOnHandler {
+					return
+				}
+			} else if message.ServerHeartbeat != nil {
+				if message.ServerHeartbeat.ReplyRequested == 1 {
+					if err = sendStatus(); err != nil {
