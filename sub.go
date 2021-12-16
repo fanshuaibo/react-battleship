@@ -169,3 +169,16 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 			if message == nil {
 				return fmt.Errorf("replication failed: nil message received, should not happen")
 			}
+
+			if message.WalMessage != nil {
+				var logmsg Message
+				walStart := message.WalMessage.WalStart
+
+				// Skip stuff that's in the past
+				if walStart > 0 && walStart <= startLSN {
+					continue
+				}
+
+				if walStart > atomic.LoadUint64(&s.maxWal) {
+					atomic.StoreUint64(&s.maxWal, walStart)
+				}
