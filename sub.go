@@ -195,3 +195,12 @@ func (s *Subscription) Start(ctx context.Context, startLSN uint64, h Handler) (e
 			} else if message.ServerHeartbeat != nil {
 				if message.ServerHeartbeat.ReplyRequested == 1 {
 					if err = sendStatus(); err != nil {
+						return
+					}
+				}
+			} else {
+				return fmt.Errorf("No WalMessage/ServerHeartbeat defined in packet, should not happen")
+			}
+		}
+	}
+}
