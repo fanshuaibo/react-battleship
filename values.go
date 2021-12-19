@@ -6,4 +6,4 @@ import (
 	"github.com/jackc/pgx/pgtype"
 )
 
-t
+type Relat
