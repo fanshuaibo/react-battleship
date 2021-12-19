@@ -3,4 +3,4 @@ package pgoutput
 import (
 	"fmt"
 
-	"github.co
+	"github.com/jackc/pgx/
