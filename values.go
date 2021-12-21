@@ -6,4 +6,4 @@ import (
 	"github.com/jackc/pgx/pgtype"
 )
 
-type Relat
+type RelationSet struct {
