@@ -7,4 +7,4 @@ import (
 )
 
 type RelationSet struct {
-	// Mutex probably will be
+	// Mutex probably will be redundan
