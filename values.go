@@ -8,3 +8,4 @@ import (
 
 type RelationSet struct {
 	// Mutex probably will be redundant as receiving
+	// a replic
