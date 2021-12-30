@@ -8,4 +8,4 @@ import (
 
 type RelationSet struct {
 	// Mutex probably will be redundant as receiving
-	// a replication stream is currently stric
+	// a replication stream is currently strictly single-thre
