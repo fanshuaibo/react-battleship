@@ -9,4 +9,4 @@ import (
 type RelationSet struct {
 	// Mutex probably will be redundant as receiving
 	// a replication stream is currently strictly single-threaded
-	relations map[uint32
+	relations map[uint32]Relat
