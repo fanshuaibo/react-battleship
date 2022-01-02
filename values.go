@@ -13,4 +13,4 @@ type RelationSet struct {
 	connInfo  *pgtype.ConnInfo
 }
 
-// NewRelationSet create
+// NewRelationSet creates a new re
