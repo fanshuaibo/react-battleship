@@ -14,4 +14,4 @@ type RelationSet struct {
 }
 
 // NewRelationSet creates a new relation set.
-// Optionally ConnInfo can 
+// Optionally ConnInfo can be provided, 
