@@ -17,4 +17,6 @@ type RelationSet struct {
 // Optionally ConnInfo can be provided, however currently we need some changes to pgx to get it out
 // from ReplicationConn.
 func NewRelationSet(ci *pgtype.ConnInfo) *RelationSet {
-	return &RelationSet{map[uint32]Relation{}
+	return &RelationSet{map[uint32]Relation{}, ci}
+}
+
