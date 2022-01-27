@@ -20,4 +20,4 @@ func NewRelationSet(ci *pgtype.ConnInfo) *RelationSet {
 	return &RelationSet{map[uint32]Relation{}, ci}
 }
 
-func (rs 
+func (rs *Rela
