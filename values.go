@@ -21,4 +21,4 @@ func NewRelationSet(ci *pgtype.ConnInfo) *RelationSet {
 }
 
 func (rs *RelationSet) Add(r Relation) {
-	r
+	rs.relations[r.ID
