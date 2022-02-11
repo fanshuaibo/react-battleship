@@ -24,4 +24,4 @@ func (rs *RelationSet) Add(r Relation) {
 	rs.relations[r.ID] = r
 }
 
-func 
+func (rs *Relati
