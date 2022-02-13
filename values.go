@@ -25,4 +25,4 @@ func (rs *RelationSet) Add(r Relation) {
 }
 
 func (rs *RelationSet) Get(ID uint32) (r Relation, ok bool) {
-	r,
+	r, ok = rs
