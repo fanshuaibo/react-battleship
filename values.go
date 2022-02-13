@@ -24,4 +24,5 @@ func (rs *RelationSet) Add(r Relation) {
 	rs.relations[r.ID] = r
 }
 
-func (rs *RelationSet) Get(ID uint32) (r Relation, ok bo
+func (rs *RelationSet) Get(ID uint32) (r Relation, ok bool) {
+	r,
