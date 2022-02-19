@@ -29,4 +29,4 @@ func (rs *RelationSet) Get(ID uint32) (r Relation, ok bool) {
 	return
 }
 
-func (rs *RelationSet) Valu
+func (rs *RelationSet) Values(id uin
