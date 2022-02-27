@@ -33,4 +33,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 	values := map[string]pgtype.Value{}
 	rel, ok := rs.Get(id)
 	if !ok {
-		return v
+		return values, fmt
