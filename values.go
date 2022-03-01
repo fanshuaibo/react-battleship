@@ -36,4 +36,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 		return values, fmt.Errorf("no relation for %d", id)
 	}
 
-	// assert same numbe
+	// assert same number of row and 
