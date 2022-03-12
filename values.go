@@ -39,4 +39,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 	// assert same number of row and columns
 	for i, tuple := range row {
 		col := rel.Columns[i]
-		decoder := c
+		decoder := col.Decod
