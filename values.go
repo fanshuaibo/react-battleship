@@ -45,4 +45,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 			return nil, fmt.Errorf("error decoding tuple %d: %s", i, err)
 		}
 
-		values[co
+		values[col.Name] = decode
