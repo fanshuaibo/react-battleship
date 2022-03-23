@@ -42,4 +42,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 		decoder := col.Decoder()
 
 		if err := decoder.DecodeText(rs.connInfo, tuple.Value); err != nil {
-			return nil, fmt.Errorf("error decoding tuple %d
+			return nil, fmt.Errorf("error decoding tuple %d: %s", i, e
