@@ -48,4 +48,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 		values[col.Name] = decoder
 	}
 
-	retu
+	return values, nil
