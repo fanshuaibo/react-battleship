@@ -51,4 +51,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 	return values, nil
 }
 
-func (c Column) Decod
+func (c Column) Decoder() Deco
