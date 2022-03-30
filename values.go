@@ -53,4 +53,4 @@ func (rs *RelationSet) Values(id uint32, row []Tuple) (map[string]pgtype.Value, 
 
 func (c Column) Decoder() DecoderValue {
 	switch c.Type {
-	case 
+	case pgtype.ACLItemArr
