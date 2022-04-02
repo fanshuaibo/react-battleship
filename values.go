@@ -56,4 +56,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.ACLItemArrayOID:
 		return &pgtype.ACLItemArray{}
 	case pgtype.ACLItemOID:
-		return &pgtype.AC
+		return &pgtype.ACLItem{}
+	ca
