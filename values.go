@@ -59,4 +59,5 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.ACLItem{}
 	case pgtype.BoolArrayOID:
 		return &pgtype.BoolArray{}
-	case pgtype.
+	case pgtype.BoolOID:
+		
