@@ -64,4 +64,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.ByteaArrayOID:
 		return &pgtype.BoolArray{}
 	case pgtype.ByteaOID:
-		return &pgtype.Byte
+		return &pgtype.Bytea{}
+	case pgty
