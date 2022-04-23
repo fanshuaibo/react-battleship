@@ -66,4 +66,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.ByteaOID:
 		return &pgtype.Bytea{}
 	case pgtype.CIDOID:
-		return &pgtype.CI
+		return &pgtype.CID{}
+	case pg
