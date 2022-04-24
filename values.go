@@ -69,4 +69,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.CID{}
 	case pgtype.CIDRArrayOID:
 		return &pgtype.CIDRArray{}
-	case
+	case pgtype.CI
