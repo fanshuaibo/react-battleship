@@ -71,4 +71,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.CIDRArray{}
 	case pgtype.CIDROID:
 		return &pgtype.CIDR{}
-	
+	case 
