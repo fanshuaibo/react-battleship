@@ -72,4 +72,4 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.CIDROID:
 		return &pgtype.CIDR{}
 	case pgtype.CharOID:
-		// Not all possible value
+		// Not all possible values of QChar 
