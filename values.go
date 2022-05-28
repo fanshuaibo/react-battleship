@@ -73,4 +73,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.CIDR{}
 	case pgtype.CharOID:
 		// Not all possible values of QChar are representable in the text format
-		ret
+		return &pgtyp
