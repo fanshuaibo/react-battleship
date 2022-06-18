@@ -75,4 +75,4 @@ func (c Column) Decoder() DecoderValue {
 		// Not all possible values of QChar are representable in the text format
 		return &pgtype.Unknown{}
 	case pgtype.DateArrayOID:
-		return &
+		return &pgtype.Dat
