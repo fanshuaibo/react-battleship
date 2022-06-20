@@ -77,4 +77,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.DateArrayOID:
 		return &pgtype.DateArray{}
 	case pgtype.DateOID:
-		return &pgtype
+		return &pgtype.Date{}
+	
