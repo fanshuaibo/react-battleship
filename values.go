@@ -80,4 +80,5 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.Date{}
 	case pgtype.Float4ArrayOID:
 		return &pgtype.Float4Array{}
-	case pgtype.Float4O
+	case pgtype.Float4OID:
+		ret
