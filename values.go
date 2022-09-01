@@ -84,4 +84,5 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.Float4{}
 	case pgtype.Float8ArrayOID:
 		return &pgtype.Float8Array{}
-	case pgtype.Float8O
+	case pgtype.Float8OID:
+		return &p
