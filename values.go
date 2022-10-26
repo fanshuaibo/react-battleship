@@ -97,4 +97,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.Int4ArrayOID:
 		return &pgtype.Int4Array{}
 	case pgtype.Int4OID:
-		return &pgtype
+		return &pgtype.Int4{}
+	ca
