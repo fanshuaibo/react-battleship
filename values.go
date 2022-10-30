@@ -102,3 +102,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.Int8Array{}
 	case pgtype.Int8OID:
 		return &pgtype.Int8{}
+	case pgtyp
