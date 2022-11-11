@@ -105,4 +105,4 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.JSONBOID:
 		return &pgtype.JSONB{}
 	case pgtype.JSONOID:
-		return 
+		return &pgtype.
