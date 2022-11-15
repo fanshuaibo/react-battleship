@@ -108,4 +108,5 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.JSON{}
 	case pgtype.NameOID:
 		return &pgtype.Name{}
-	case pgtype.OI
+	case pgtype.OIDOID:
+		// pgty
