@@ -109,4 +109,4 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.NameOID:
 		return &pgtype.Name{}
 	case pgtype.OIDOID:
-		// pgtype.OID does not implem
+		// pgtype.OID does not implement the valu
