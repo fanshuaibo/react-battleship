@@ -111,4 +111,4 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.OIDOID:
 		// pgtype.OID does not implement the value interface
 		return &pgtype.Unknown{}
-	cas
+	case pgtype.Re
