@@ -112,4 +112,4 @@ func (c Column) Decoder() DecoderValue {
 		// pgtype.OID does not implement the value interface
 		return &pgtype.Unknown{}
 	case pgtype.RecordOID:
-		// The text format 
+		// The text format output forma
