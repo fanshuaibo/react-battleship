@@ -114,4 +114,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.RecordOID:
 		// The text format output format for Records does not include type
 		// information and is therefore impossible to decode
-		return &pgtype.Unknow
+		return &pgtype.Unknown{}
+	case pgtyp
