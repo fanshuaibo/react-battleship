@@ -115,4 +115,5 @@ func (c Column) Decoder() DecoderValue {
 		// The text format output format for Records does not include type
 		// information and is therefore impossible to decode
 		return &pgtype.Unknown{}
-	case pgtyp
+	case pgtype.TIDOID:
+		return 
