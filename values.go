@@ -116,4 +116,4 @@ func (c Column) Decoder() DecoderValue {
 		// information and is therefore impossible to decode
 		return &pgtype.Unknown{}
 	case pgtype.TIDOID:
-		return 
+		return &pgtype.TID
