@@ -117,4 +117,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.Unknown{}
 	case pgtype.TIDOID:
 		return &pgtype.TID{}
-	case pgty
+	case pgtype.TextArray
