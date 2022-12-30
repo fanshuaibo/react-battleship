@@ -121,4 +121,5 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.TextArray{}
 	case pgtype.TextOID:
 		return &pgtype.Text{}
-	case pgtype.TimestampArrayOID
+	case pgtype.TimestampArrayOID:
+		return &p
