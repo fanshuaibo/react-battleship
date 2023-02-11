@@ -131,4 +131,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.Timestamptz{}
 	case pgtype.UUIDOID:
 		return &pgtype.UUID{}
-	case pgtyp
+	case pgtype.UnknownOI
