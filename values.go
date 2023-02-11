@@ -132,4 +132,4 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.UUIDOID:
 		return &pgtype.UUID{}
 	case pgtype.UnknownOID:
-		return &
+		return &pgtype.Unkno
