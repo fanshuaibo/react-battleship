@@ -133,4 +133,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.UUID{}
 	case pgtype.UnknownOID:
 		return &pgtype.Unknown{}
-	case pgty
+	case pgtype.VarcharArra
