@@ -135,4 +135,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.Unknown{}
 	case pgtype.VarcharArrayOID:
 		return &pgtype.VarcharArray{}
-	case pgtyp
+	case pgtype.Varcha
