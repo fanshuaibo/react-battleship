@@ -137,4 +137,4 @@ func (c Column) Decoder() DecoderValue {
 		return &pgtype.VarcharArray{}
 	case pgtype.VarcharOID:
 		return &pgtype.Varchar{}
-	c
+	case pgtype.XI
