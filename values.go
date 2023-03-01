@@ -138,4 +138,6 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.VarcharOID:
 		return &pgtype.Varchar{}
 	case pgtype.XIDOID:
-		return &pgtype.XID{
+		return &pgtype.XID{}
+	default:
+		//
