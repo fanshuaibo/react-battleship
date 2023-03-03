@@ -140,4 +140,5 @@ func (c Column) Decoder() DecoderValue {
 	case pgtype.XIDOID:
 		return &pgtype.XID{}
 	default:
-		// panic(fmt.Sprintf("unknown OID type %d", c.T
+		// panic(fmt.Sprintf("unknown OID type %d", c.Type))
+		return &p
